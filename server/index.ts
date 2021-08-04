@@ -6,7 +6,7 @@ const app = express();
 const allOrders: any[] = require('./orders.json');
 
 const PORT = 3232;
-const PAGE_SIZE = 20;
+const PAGE_SIZE = 42;
 
 app.use(bodyParser.json());
 
