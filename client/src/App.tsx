@@ -94,7 +94,7 @@ export class App extends React.PureComponent<{}, AppState> {
 		!pred ? ordersToFilt
 		.filter((order: Order) => (order.customer.name.toLowerCase() + order.id).includes(this.state.search.toLowerCase())) :
 			ordersToFilt.filter((order: Order) =>
-				order.items.map((item) => item.name.toLowerCase().includes(this.state.search.toLowerCase())).includes(true))
+				order.items.map((item) => item.name != undefined ? item.name.toLowerCase().includes(this.state.search.toLowerCase()):false).includes(true))
 	
 
 	filterNotDeliv = (ordersToFilt: Order[], pred: boolean): Order[] =>
